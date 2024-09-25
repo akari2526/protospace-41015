@@ -1,6 +1,6 @@
 class PrototypesController < ApplicationController
   before_action :set_prototype, except: [:index, :new, :create]
-  before_action :authenticate_user!, only:[:new, :edit, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :current_user, only: [:edit, :update, :destroy]
   
   def index
